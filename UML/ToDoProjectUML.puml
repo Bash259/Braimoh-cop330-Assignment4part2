@@ -1,0 +1,34 @@
+@startuml
+
+class MainApp{
+    main()
+    start()
+}
+class TodoListRemover{
+    RequestIfAListWantsToBeRemoved
+    RemoveTheSelectedList
+}
+class MarkAsComplete{
+    ClickACheckBoxToMarkAsComplete
+}
+class TodoListFileWriter{
+    CallThisClassThatWritesTheListToAFile
+}
+class TodoListFileGetter{
+    CallThisClassToGetPreviousTodoList
+}
+class ToDoListCollector{
+    CallThisClassToGetToDoListFromUsers
+}
+
+javafx.Application <|-- MainApp
+
+TodoListRemover <-- ToDoListCollector
+TodoListFileWriter <-- ToDoListCollector
+MarkAsComplete <-- ToDoListCollector
+
+MainApp --|> ToDoListCollector
+
+
+
+@enduml
