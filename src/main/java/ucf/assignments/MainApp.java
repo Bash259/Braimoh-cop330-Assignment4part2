@@ -22,7 +22,7 @@ public class MainApp extends Application{
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ToDoList.fxml")));
 
                 Scene scene = new Scene(root);
-                primaryStage.setTitle("Hi");
+                primaryStage.setTitle("ToDoListApp");
                 primaryStage.setScene(scene);
                 primaryStage.show();
             }

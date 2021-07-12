@@ -7,26 +7,42 @@
 
 package ucf.assignments;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class TodoListCollector {
-    private static final Scanner UserInput = new Scanner(System.in);
+    private SimpleStringProperty Progress;
+    private SimpleStringProperty Task;
+    private SimpleStringProperty Date;
 
-    public ArrayList<String> TodoListCollectorA() {
-        /*
-        Cover the following in a while(true) loop
-        request for Todo List name
-        request for the tasks and the date to be completed by
-        Make an gson array (superArrayList) list to store all the Todo list names and store another gson array list (subArrayList) that contains the task and the date to be completed
-        Let the name be the object in the superArrayList
-        make another array list for the tasks and dates to be completed by in the object and key spaces in the new array list(Let this be for the key of the super array list)
-        ask a question do you want to add another Todo list y/n?
-        add an if statement if the answer is yes continue the loop
-        else if the answer is no display a thank you message and break from the loop
-         */
-        return null;
+    public TodoListCollector(String Progress, String Task, String Date) {
+        this.Progress = new SimpleStringProperty(Progress);
+       this.Task = new SimpleStringProperty(Task);
+       this.Date = new SimpleStringProperty(Date);
     }
-    //return superArrayList
+
+    public String getTask(){
+        return Task.get();
+    }
+
+    public void setTask(String Task){
+        this.Task = new SimpleStringProperty(Task);
+    }
+
+    public String getDate(){
+        return Date.get();
+    }
+
+    public void setDate(String Date){
+        this.Date = new SimpleStringProperty(Date);
+    }
+
+    public String getProgress(){
+        return Progress.get();
+    }
+
+    public void setProgress(String Progress){
+        this.Progress = new SimpleStringProperty(Progress);
+    }
+
 }

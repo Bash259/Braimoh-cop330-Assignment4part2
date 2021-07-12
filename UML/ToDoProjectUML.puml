@@ -4,30 +4,44 @@ class MainApp{
     main()
     start()
 }
-class TodoListRemover{
-    RequestIfAListWantsToBeRemoved
-    RemoveTheSelectedList
-}
-class MarkAsComplete{
-    ClickACheckBoxToMarkAsComplete
-}
-class TodoListFileWriter{
-    CallThisClassThatWritesTheListToAFile
-}
-class TodoListFileGetter{
-    CallThisClassToGetPreviousTodoList
-}
+
 class ToDoListCollector{
-    CallThisClassToGetToDoListFromUsers
+    String Progress
+    String Task
+    String Date
+
+    +getProgress()
+    +setProgress()
+
+    +getTask()
+    +setTask()
+
+    +getDate()
+    +setDate()
+
+}
+class MainAppController{
+    +returnToDoList
+    +returnListItem
+    +returnItemDate
+
+    +AddItem()
+    +ToDoListCollectorGen()
+    +initialize()
+    +buttonRemove()
+    +onEditChanged()
+    +saveAList()
+    +LoadList()
+    +showDone()
+
 }
 
 javafx.Application <|-- MainApp
 
-TodoListRemover <-- ToDoListCollector
-TodoListFileWriter <-- ToDoListCollector
-MarkAsComplete <-- ToDoListCollector
+MainApp <|-- ToDoListfxml
+ToDoListfxml --|> MainAppController
 
-MainApp --|> ToDoListCollector
+MainAppController <|-- ToDoListCollector
 
 
 
